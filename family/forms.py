@@ -17,7 +17,7 @@ class MemberForm(UserCreationForm):
 
     class Meta:
         model = member
-        fields = ['FID' , 'email' ,  'user_name','firstName', 'middleName','lastName' , 'gender' , 'city', 'pinCode' , 'country' ,'password1' , 'password2']
+        fields = ['FID' , 'email' ,  'user_name','firstName','lastName' , 'gender' , 'city', 'pinCode' , 'country' ,'password1' , 'password2']
 
 
 class MemberForm1(UserChangeForm):
@@ -29,7 +29,7 @@ class MemberForm1(UserChangeForm):
 
     class Meta:
         model = member
-        fields = ['email' ,'mobileNo' ,'jobOrg','maritalStatus','mother','father','spouse', 'address1' , 'country' , 'city','sport','movie' ,'book','present' , 'pinCode']
+        fields = ['middleName' ,'email' ,'mobileNo' ,'jobOrg','maritalStatus','mother','father','spouse', 'address1' , 'country' , 'city','sport','movie' ,'book','present' , 'pinCode']
     
 
     

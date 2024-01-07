@@ -97,7 +97,7 @@ class member(AbstractBaseUser , PermissionsMixin):
     email = models.EmailField(max_length= 35)
     user_name = models.CharField(max_length= 20 , unique=True)
     firstName = models.CharField(max_length=20 ,  blank = True)
-    middleName = models.CharField(max_length=20 , blank = True)
+    middleName = models.CharField(max_length=20 , blank = True , null = True)
     lastName = models.CharField(max_length= 20 , blank = True)
     mobileNo = models.IntegerField(blank=True , null = True)
     birthDay = models.DateField(default=date.today)
