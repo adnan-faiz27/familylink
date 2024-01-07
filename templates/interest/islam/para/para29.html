@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/islam.css' %}" />
+    <title>PARA_29 | FAMILY LINK TREE</title>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar fixed-top navbar-dark text-light navbar-expand-md navigation-clean-search"
+      style="background-color: black;">
+      <div class="container"><a class="navbar-brand" href="{% url 'viewMember' %}">FAMILY LINK</a><button
+          class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle
+            navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'viewMember' %}"
+              class="login">Home</a></span>
+            <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' 'para' %}"
+                class="login">Para</a></span>
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' '99names' %}"
+                class="login">99names</a></span>
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' 'hadiths' %}"
+              class="login">Hadiths</a></span>
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' 'stories' %}"
+              class="login">Stories</a></span>
+          
+        </div>
+      </div>
+    </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="main_div">
+            <h1>{{obj}}</h1>
+            
+            
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">67. AL-MULK - THE KINGDOM</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/067.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">68. AL-QALAM - THE PEN</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/068.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">69. AL-HAQQAH - THE SURE TRUTH</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/069.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">70. AL-MA'ARIJ - THE WAYS OF ASCENT</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/070.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">71. NUH - PROPHET NOAH</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/071.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">72. AL-JINN - THE JINN</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/072.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">73. AL-MUZZAMMIL - THE ONE COVERING HIMSELF</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/073.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">74. AL-MUDDATHTHIR - THE ONE WRAPPING HIMSELF UP</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/074.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">75. AL-QIYAMAH - THE RESURRECTION</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/075.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">76. AL-INSAN - THE MAN</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/076.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">77. AL-MURSALAAT - THOSE SENT FORTH</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/077.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

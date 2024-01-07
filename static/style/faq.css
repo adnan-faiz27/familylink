@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Hind', sans-serif;
+  background: #fff;
+  color: #4d5974;
+  display: flex;
+  min-height: 100vh;
+}
+
+:root {
+    --orange: #ffa500;
+    --green:rgb(46 ,102, 128);
+  }
+  .header{
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    background-color: rgba(26,78,91,1);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    z-index: 10000;
+    width: 100%;
+    box-shadow: 0 0 1rem;
+}
+.header .logo{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.header .logo img{
+  height: 5.8rem;
+  width: 6.1rem;
+  border-radius: 50%;
+  margin-left: 1.5rem;
+}
+.header .logo a{
+  color: white;
+  font-size: 38px;
+  margin-left: 22px;
+  font-weight: 600;
+}
+
+
+.header .logo  a:hover{
+  color:var(--orange);
+
+}
+
+.header .logo  a span{
+  color: var(--orange);
+}
+
+.header #navbar a{
+  margin-left: 70px;
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+
+}
+.header #navbar a:hover{
+   color:rgb(247, 180, 55);
+}
+#call:hover{
+  background-color: rgba(247, 205, 90, 1);
+  
+
+}
+#call:hover .call p{
+  color: black;
+}
+
+#call{
+  display: flex;
+  background-color:var(--orange);
+  
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: .7rem 0;
+}
+
+.call p{
+color:black;
+}
+
+#menubar{
+  color: white;
+  font-size: 25px;
+  display: none;
+  margin-right: 44px;
+}
+
+#home,#acc-btn{
+  font-size: 25px;
+  color: white;
+  margin-right: 44px;
+  
+}
+#home:hover,#acc-btn:hover,#menubar:hover{
+  color: var(--orange);
+}
+
+
+
+
+
+
+
+.container-faq {
+  margin: 0 auto;
+  padding: 2rem 4rem 0rem 2rem;
+  width: 100%;
+}
+
+.container-faq h2{
+    font-size: 3rem;
+
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion .accordion-item button[aria-expanded='true'] {
+  border-bottom: 1px solid #03b5d2;
+}
+
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #7288a2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: #03b5d2;
+}
+
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: #03b5d2;
+  border: 1px solid #03b5d2;
+}
+
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+
+.accordion button[aria-expanded='true'] {
+  color: #03b5d2;
+}
+.accordion button[aria-expanded='true'] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded='true'] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
+}
+
+
+
+
+
+@media only screen and (max-width: 1080px)
+{
+  .container-faq {
+    padding: 2rem 2rem 0rem 2rem;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 780px)
+{
+  .container-faq h2{
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (max-width: 600px)
+{
+  .container-faq h2{
+    margin: 0.2rem;
+    font-size: 2.1rem;
+  }
+  .accordion-title{
+    font-size: 1rem;
+  }
+  .accordion .accordion-content p {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 520px)
+{
+  .container-faq h2{
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width: 520px)
+{
+  .container-faq h2{
+    font-size: 1.5rem;
+  }
+  .accordion-title{
+    font-size: 0.8rem;
+  }
+  .accordion .accordion-content p {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 410px)
+{
+  .accordion-title{
+    font-size: 0.7rem;
+  }
+  .accordion .accordion-content p {
+    font-size: 0.7rem;
+  }
+}
+

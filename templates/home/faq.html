@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/faq.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>FAQ | FAMILY LINK TREE</title>
+</head>
+<body>
+        <div class="container-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="accordion">
+            <div class="accordion-item">
+              <button id="accordion-button-1" aria-expanded="false">
+                <span class="accordion-title">1.)What is FAMILY LINK TREE ?</span>
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  FAMILY LINK TREE is a family oriented application which gives families a platform to interact and know about eachother. 
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button id="accordion-button-2" aria-expanded="false">
+                <span class="accordion-title">2.) How many different families can register?</span>
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  There is no limit on number of families, each family will have their own family id or FID under which all the members of the same family can register.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button id="accordion-button-3" aria-expanded="false">
+                <span class="accordion-title">3.) How can i have my own FID?</span>
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  You can have your own FID by sending a request on family.mail.link@gmail.com , right now no request will be considered till further notice. 
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button id="accordion-button-4" aria-expanded="false">
+                <span class="accordion-title">4.) Will different family know about eachother?</span>
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  No, families with different FID will not know about eachothers existence.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button id="accordion-button-4" aria-expanded="false">
+                <span class="accordion-title">5.)What to do after registering? </span>
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  After registering go to your profile and edit your account to fill your remaining information. 
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button id="accordion-button-4" aria-expanded="false">
+                <span class="accordion-title">6.)I can't find my mother or father or spouse name while editing my account? </span>
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  You will be able to see their name only if they also have their own account. 
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button id="accordion-button-4" aria-expanded="false">
+                <span class="accordion-title">7.)What will be my credentials ? </span>
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Your credentials will be your user_name and password, make sure you and your child doesn't have same email address.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <script src="script.js"></script>
+        <script>
+            const items = document.querySelectorAll('.accordion button');
+
+function toggleAccordion() {
+  const itemToggle = this.getAttribute('aria-expanded');
+
+  for (i = 0; i < items.length; i++) {
+    items[i].setAttribute('aria-expanded', 'false');
+  }
+
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+
+items.forEach((item) => item.addEventListener('click', toggleAccordion));
+
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'style/islam.css' %}" />
+  <title>99 NAMES | FAMILY LINK TREE</title>
+</head>
+
+<body>
+  <div>
+    <nav class="navbar fixed-top navbar-dark text-light navbar-expand-md navigation-clean-search"
+      style="background-color: black;">
+      <div class="container"><a class="navbar-brand" href="{% url 'viewMember' %}">FAMILY LINK</a><button
+          class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle
+            navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'viewMember' %}"
+              class="login">Home</a></span>
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' 'para' %}"
+                class="login">Para</a></span>
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' '99names' %}"
+                class="login">99names</a></span>
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' 'hadiths' %}"
+              class="login">Hadiths</a></span>
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' 'stories' %}"
+              class="login">Stories</a></span>
+          
+        </div>
+      </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="main_div">
+      <h1>99 Names of Allah</h1>
+      <br>
+      <div class="audio_div">
+          <audio controls>
+              <source src="{% static 'audio/99names.mp3' %}" type="audio/mpeg">
+          </audio>
+      </div>
+      <div class="names_div">
+        <div class="name">1. Ar-Rahman</div>
+        <div class="name_meaning">(The Beneficent)</div>
+        <div class="explaination">He who wills goodness and mercy for all His creatures</div>
+      </div>
+      <div class="names_div">
+        <div class="name">2. Ar-Raheem</div>
+        <div class="name_meaning">(The Merciful)</div>
+        <div class="explaination">He who acts with extreme kindness</div>
+      </div>
+      <div class="names_div">
+        <div class="name">3. Al-Malik</div>
+        <div class="name_meaning">(The King)</div>
+        <div class="explaination">The Sovereign Lord, The One with the complete Dominion, the One Whose Dominion is
+          clear from imperfection</div>
+      </div>
+      <div class="names_div">
+        <div class="name">4. Al-Quddus</div>
+        <div class="name_meaning">(The Most Sacred / The Most Holy)</div>
+        <div class="explaination">The one who is pure, so far removed of any imperfection. He has no shortcomings, evil
+          is not attributed to Him.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">5. As-Salam</div>
+        <div class="name_meaning">(The Giver of Peace)</div>
+        <div class="explaination">The One who is free from every imperfection. It is because He is free of any defect
+          that one who is with Him experiences tranquility.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">6. Al-Mumin</div>
+        <div class="name_meaning">(The Infuser of Faith)</div>
+        <div class="explaination">The One who witnessed for Himself that no one is God but Him. And He witnessed for His
+          believers that they are truthful in their belief that no one is God but Him</div>
+      </div>
+      <div class="names_div">
+        <div class="name">7. Al-Muhaymin</div>
+        <div class="name_meaning">(The Guardian)</div>
+        <div class="explaination">The One who witnesses the saying and deeds of His creatures</div>
+      </div>
+      <div class="names_div">
+        <div class="name">8. Al-Aziz</div>
+        <div class="name_meaning">(The Mighty One)</div>
+        <div class="explaination">The Strong, The Defeater who is not defeated</div>
+      </div>
+      <div class="names_div">
+        <div class="name">9. Al-Jabbar</div>
+        <div class="name_meaning">(The All Compelling)</div>
+        <div class="explaination">The One that nothing happens in His Dominion except that which He willed</div>
+      </div>
+      <div class="names_div">
+        <div class="name">10. Al-Mutakabbir</div>
+        <div class="name_meaning">(The Dominant One)</div>
+        <div class="explaination">The One who is clear from the attributes of the creatures and from resembling them.
+        </div>
+      </div>
+      <div class="names_div">
+        <div class="name">11. Al-Khaliq</div>
+        <div class="name_meaning">(The Creator)</div>
+        <div class="explaination">The One who brings everything from non-existence to existence</div>
+      </div>
+      <div class="names_div">
+        <div class="name">12. Al-Bari</div>
+        <div class="name_meaning">(The Evolver / The Maker)</div>
+        <div class="explaination">The Maker, The Creator who has the Power to turn the entities.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">13. Al-Musawwir</div>
+        <div class="name_meaning">(The Flawless Shaper)</div>
+        <div class="explaination">The One who forms His creatures in different pictures.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">14. Al-Ghaffar</div>
+        <div class="name_meaning">(The Great Forgiver)</div>
+        <div class="explaination">The Forgiver, The One who forgives the sins of His slaves time and time again.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">15. Al-Qahhar</div>
+        <div class="name_meaning">(The All-Prevailing One)</div>
+        <div class="explaination">The Dominant, The One who has the perfect Power and is not unable over anything</div>
+      </div>
+      <div class="names_div">
+        <div class="name">16. Al-Wahhab</div>
+        <div class="name_meaning">(The Supreme Bestower)</div>
+        <div class="explaination">The One who is Generous in giving plenty without any return. He is everything that
+          benefits whether Halal or Haram.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">17. Ar-Razzaq</div>
+        <div class="name_meaning">(The Total Provider)</div>
+        <div class="explaination">The Sustainer, The Provider.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">18. Al-Fattah</div>
+        <div class="name_meaning">(The Opener)</div>
+        <div class="explaination">The Solver, The Reliever, The Judge, The One who opens for His slaves the closed
+          worldly and religious matters.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">19. Al-Alim</div>
+        <div class="name_meaning">(The All-Knowing One)</div>
+        <div class="explaination">The Knowledgeable; The One nothing is absent from His knowledge</div>
+      </div>
+      <div class="names_div">
+        <div class="name">20. Al-Qabid</div>
+        <div class="name_meaning">(The Restricting One)</div>
+        <div class="explaination">The Constrictor, The Withholder, The One who constricts the sustenance by His wisdom
+          and expands and widens it with His Generosity and Mercy.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">21. Al-Basit</div>
+        <div class="name_meaning">(The Extender)</div>
+        <div class="explaination">The Englarger, The One who constricts the sustenance by His wisdom and expands and
+          widens it with His Generosity and Mercy.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">22. Al-Khafid</div>
+        <div class="name_meaning">(The Reducer)</div>
+        <div class="explaination">The Abaser, The One who lowers whoever He willed by His Destruction and raises whoever
+          He willed by His Endowment.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">23. Ar-Rafi</div>
+        <div class="name_meaning">(The Elevating One)</div>
+        <div class="explaination">The Exalter, The Elevator, The One who lowers whoever He willed by His Destruction and raises whoever He willed by His Endowment.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">24. Al-Mu'izz</div>
+        <div class="name_meaning">(The Honourer-Bestower)</div>
+        <div class="explaination">He gives esteem to whoever He willed, hence there is no one to degrade Him; And He degrades whoever He willed, hence there is no one to give Him esteem.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">25. Al-Muzil</div>
+        <div class="name_meaning">(The Abaser)</div>
+        <div class="explaination">The Dishonourer, The Humiliator, He gives esteem to whoever He willed, hence there is no one to degrade Him; And He degrades whoever He willed, hence there is no one to give Him esteem.</div>
+      </div> 
+      <div class="names_div">
+        <div class="name">26. As-Sami</div>
+        <div class="name_meaning">(The All-Hearer)</div>
+        <div class="explaination">The Hearer, The One who Hears all things that are heard by His Eternal Hearing without an ear, instrument or organ.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">27. Al-Baseer</div>
+        <div class="name_meaning">(The All-Seeing)</div>
+        <div class="explaination">The All-Noticing, The One who Sees all things that are seen by His Eternal Seeing without a pupil or any other instrument.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">28. Al-Hakam</div>
+        <div class="name_meaning">(The Impartial Judge)</div>
+        <div class="explaination">The Judge, He is the Ruler andThe Judge, He is the Ruler and His judgment is His Word. His judgment is His Word.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">29. Al-Adl</div>
+        <div class="name_meaning">(The Embodiment of Justice)</div>
+        <div class="explaination">The Just, The One who is entitled to do what He does.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">30. Al-Lateef</div>
+        <div class="name_meaning">(The Knower of Subtleties)</div>
+        <div class="explaination">The Subtle One, The Gracious, The One who is kind to His slaves and endows upon them.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">31. Al-Khabir</div>
+        <div class="name_meaning">(The All-Aware One)</div>
+        <div class="explaination">The One who knows the truth of things.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">32. Al-Haleem</div>
+        <div class="name_meaning">(The Clement One)</div>
+        <div class="explaination">The Forebearing, The One who delays the punishment for those who deserve it and then He might forgive them.</div>
+      </div> 
+      <div class="names_div">
+        <div class="name">33. Al-Azeem</div>
+        <div class="name_meaning">(The Magnificent One)</div>
+        <div class="explaination">The Great One, The Mighty, The One deserving the attributes of Exaltment, Glory, Extolement, and Purity from all imperfection.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">34. Al-Ghafoor</div>
+        <div class="name_meaning">(The All-Forgiving)</div>
+        <div class="explaination">The All-Forgiving, The Forgiving, The One who forgives a lot.</div>
+      </div> 
+      <div class="names_div">
+        <div class="name">35. Ash-Shakur</div>
+        <div class="name_meaning">(The Acknowledging One)</div>
+        <div class="explaination">The Grateful, The Appreciative, The One who gives a lot of reward for a little obedience.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">36. Al-Aliyy</div>
+        <div class="name_meaning">(The Sublime One)</div>
+        <div class="explaination">The Most High, The One who is clear from the attributes of the creatures.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">37. Al-Kabeer</div>
+        <div class="name_meaning">(The Great One)</div>
+        <div class="explaination">The Most Great, The Great, The One who is greater than everything in status</div>
+      </div>
+      <div class="names_div">
+        <div class="name">38. Al-Hafiz</div>
+        <div class="name_meaning">(The Guarding One)</div>
+        <div class="explaination">The Preserver, The Protector, The One who protects whatever and whoever He willed to protect.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">39. Al-Muqeet</div>
+        <div class="name_meaning">(The Sustaining One)</div>
+        <div class="explaination">The Maintainer, The Guardian, The Feeder, The One who has the Power.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">40. Al-Haseeb</div>
+        <div class="name_meaning">(The Reckoning One)</div>
+        <div class="explaination">The Reckoner, The One who gives the satisfaction.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">41. Al-Jaleel</div>
+        <div class="name_meaning">(The Majestic One)</div>
+        <div class="explaination">The Sublime One, The Beneficent, The One who is attributed with greatness of Power and Glory of status.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">42. Al-Karim</div>
+        <div class="name_meaning">(The Bountiful One)</div>
+        <div class="explaination">The Generous One, The Gracious, The One who is attributed with greatness of Power and Glory of status.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">43. Ar-Raqib</div>
+        <div class="name_meaning">(The Watchful One)</div>
+        <div class="explaination">The Watcher, The One that nothing is absent from Him. Hence, it’s meaning is related to attribute of Knowledge.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">44. Al-Mujeeb</div>
+        <div class="name_meaning">(The Responding One)</div>
+        <div class="explaination">The Responsive, The Hearkener, The One who answers the one in need if he asks Him and rescues the yearned if he calls upon Him.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">45. Al-Wasi</div>
+        <div class="name_meaning">(The All-Pervading One)</div>
+        <div class="explaination">The Vast, The All-Embracing, The Knowledgeable.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">46. Al-Hakeem</div>
+        <div class="name_meaning">(The Wise One)</div>
+        <div class="explaination">The Wise, The Judge of Judges, The One who is correct in His doings.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">47. Al-Wadud</div>
+        <div class="name_meaning">(The Loving One)</div>
+        <div class="explaination">The Most Loving, The Most Affectionate, The Beloved</div>
+      </div>
+      <div class="names_div">
+        <div class="name">48.	Al-Majeed</div>
+        <div class="name_meaning">(The Glorious One)</div>
+        <div class="explaination">The Most Glorious One, The One who is with perfect Power, High Status, Compassion, Generosity and Kindness.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">49.	Al-Ba'ith</div>
+        <div class="name_meaning">(The Infuser of New Life )</div>
+        <div class="explaination">The Awakener, The Resurrector, The Arouser</div>
+      </div>
+      <div class="names_div">
+        <div class="name">50.	Ash-Shaheed</div>
+        <div class="name_meaning">(The All Observing Witness)</div>
+        <div class="explaination">The Witness, The One who nothing is absent from Him.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">51.	Al-Haqq</div>
+        <div class="name_meaning">(The Embodiment of Truth)</div>
+        <div class="explaination">The Truth, The True, The One who truly exists.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">52. Al-Wakeel</div>
+        <div class="name_meaning">(The Universal Trustee)</div>
+        <div class="explaination">The Trustee, The One who gives the satisfaction and is relied upon</div>
+      </div>
+      <div class="names_div">
+        <div class="name">53. Al-Qawiyy</div>
+        <div class="name_meaning">(The Strong One)</div>
+        <div class="explaination">The Most Strong, The Strong, The One with the complete Power.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">54. Al-Matin</div>
+        <div class="name_meaning">(The Firm One)</div>
+        <div class="explaination">The One with extreme Power which is un-interrupted and He does not get tired.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">55. Al-Waliy</div>
+        <div class="name_meaning">(The Protecting Associate)</div>
+        <div class="explaination">The Protecting Friend, The Supporter.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">56. Al-Hameed</div>
+        <div class="name_meaning">(The Sole-Laudable One)</div>
+        <div class="explaination">The Praiseworthy, The praised One who deserves to be praised.</div>
+      </div> 
+      <div class="names_div">
+        <div class="name">57. Al-Muhsi</div>
+        <div class="name_meaning">(The All-Enumerating One)</div>
+        <div class="explaination">The Counter, The Reckoner, The One who the count of things are known to him.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">58. Al-Mubdi</div>
+        <div class="name_meaning">(The Originator)</div>
+        <div class="explaination">The One who started the human being. That is, He created him.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">59. Al-Muid</div>
+        <div class="name_meaning">(The Restorer)</div>
+        <div class="explaination">The Reproducer, The One who brings back the creatures after death.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">60. Al-Muhyi</div>
+        <div class="name_meaning">(The Maintainer of life)</div>
+        <div class="explaination">The Restorer, The Giver of Life.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">61. Al-Mumeet</div>
+        <div class="name_meaning">(The Inflictor of Death)</div>
+        <div class="explaination">The Creator of Death, The Destroyer, The One who renders the living dead.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">62. Al-Hayy</div>
+        <div class="name_meaning">(The Eternally Living One)</div>
+        <div class="explaination">The Alive, The One attributed with a life that is unlike our life and is not that of a combination of soul, flesh or blood.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">63. Al-Qayyum</div>
+        <div class="name_meaning">(The Self-Subsisting One)</div>
+        <div class="explaination">The Self-Subsisting, The Self-Existing One upon Whom all others depend.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">64. Al-Wajid</div>
+        <div class="name_meaning">(The Pointing One)</div>
+        <div class="explaination">The Perceiver, The Finder, The Rich who is never poor. Al-Wajid is Richness.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">65. Al-Maajid</div>
+        <div class="name_meaning">(The All-Noble One)</div>
+        <div class="explaination">The Glorious, He who is Most Glorious.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">66. Al-Wahid</div>
+        <div class="name_meaning">(The Only One)</div>
+        <div class="explaination">The Unique, The One, The One without a partner.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">67. Al-Ahad</div>
+        <div class="name_meaning">(The Sole One)</div>
+        <div class="explaination">The One.</div>
+      </div> 
+      <div class="names_div">
+        <div class="name">68. As-Samad</div>
+        <div class="name_meaning">(The Supreme Provider)</div>
+        <div class="explaination">The Eternal, The Independent, The Master who is relied upon in matters and reverted to in ones needs. He is the only one a person should turn to when feeling helpless.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">69. Al-Qadir</div>
+        <div class="name_meaning">(The All-Powerful)</div>
+        <div class="explaination">The Able, The Capable, The One attributed with Power.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">70. Al-Muqtadir</div>
+        <div class="name_meaning">(The All Authoritative One)</div>
+        <div class="explaination">The Powerful, The Dominant, The One with the perfect Power that nothing is withheld from Him.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">71. Al-Muqaddim</div>
+        <div class="name_meaning">(The Expediting One)</div>
+        <div class="explaination">The Expediter, The Promoter, The One who puts things in their right places.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">72. Al-Muakhkhir</div>
+        <div class="name_meaning">(The Delayer)</div>
+        <div class="explaination">The Postponer, He Who Puts Far Away. He makes ahead what He wills and delays what He wills.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">73. Al-Awwal</div>
+        <div class="name_meaning">(The Very First)</div>
+        <div class="explaination">The First, The One whose Existence is without a beginning.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">74.	Al-Akhir</div>
+        <div class="name_meaning">(The Infinite Last One)</div>
+        <div class="explaination">The Last, The One whose Existence is without an end.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">75.	Az-Zaahir</div>
+        <div class="name_meaning">(The Perceptible)</div>
+        <div class="explaination">The Manifest, The Conspicuous, The Evident</div>
+      </div>
+      <div class="names_div">
+        <div class="name">76.	Al-Baatin</div>
+        <div class="name_meaning">(The Imperceptible)</div>
+        <div class="explaination">The Hidden, The Secret One, The Inner One, The Knower of Hidden Things</div>
+      </div>
+      <div class="names_div">
+        <div class="name">77.	Al-Wali</div>
+        <div class="name_meaning">(The Holder of Supreme Authority)</div>
+        <div class="explaination">The Governor, The One who owns things and manages them.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">78.	Al-Mutaali</div>
+        <div class="name_meaning">(The Extremely Exalted One)</div>
+        <div class="explaination">The Most Exalted, The High Exalted, The One who is clear from the attributes of the creation</div>
+      </div>
+      <div class="names_div">
+        <div class="name">79.	Al-Barr</div>
+        <div class="name_meaning">(The Fountain-Head of Truth)</div>
+        <div class="explaination">The Source of All Goodness, The Righteous, The One who is kind to His creatures</div>
+      </div> 
+      <div class="names_div">
+        <div class="name">80.	At-Tawwab</div>
+        <div class="name_meaning">(The Ever-Acceptor of Repentance)</div>
+        <div class="explaination">The Acceptor of Repentance, The Oft-Forgiving, The Acceptor of our Return</div>
+      </div>
+      <div class="names_div">
+        <div class="name">81.	Al-Muntaqim</div>
+        <div class="name_meaning">(The Retaliator)</div>
+        <div class="explaination">The Avenger, The Disapprover, The Inflictor of Retribution</div>
+      </div>
+      <div class="names_div">
+        <div class="name">82.	Al-Afuw</div>
+        <div class="name_meaning">(The Supreme Pardoner)</div>
+        <div class="explaination">The Pardoner, The Forgiver and The Eliminator of Sins.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">83. Ar-Rauf</div>
+        <div class="name_meaning">(The Benign One)</div>
+        <div class="explaination">The Most Kind, The Tenderly Merciful, The Clement and Compassionate</div>
+      </div>
+      <div class="names_div">
+        <div class="name">84. Malikul-Mulk</div>
+        <div class="name_meaning">(The Eternal Possessor of Sovereignty)</div>
+        <div class="explaination">The One who controls the Dominion and gives dominion to whoever He willed.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">85. Dhul-Jalaali-Wal-Ikram</div>
+        <div class="name_meaning">(The Possessor of Majesty and Honour)</div>
+        <div class="explaination">The Lord of Majesty and Bounty.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">86. Al-Muqsit</div>
+        <div class="name_meaning">(The Just One)</div>
+        <div class="explaination">The Equitable, The One who is Just in His judgment.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">87. Al-Jami</div>
+        <div class="name_meaning">(The Assembler of Scattered Creations)</div>
+        <div class="explaination">The Gatherer, The One who gathers the creatures on a day that there is no doubt about, that is the Day of Judgment.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">88. Al-Ghaniy</div>
+        <div class="name_meaning">(The Self-Sufficient One)</div>
+        <div class="explaination">The One who does not need the creation.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">89. Al-Mughni</div>
+        <div class="name_meaning">(The Enricher)</div>
+        <div class="explaination">The Emancipator, The Fulfiller of Needs, The Bestower of Wealth.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">90. Al-Mani</div>
+        <div class="name_meaning">(The Preventer)</div>
+        <div class="explaination">The Withholder.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">91. Al-Darr</div>
+        <div class="name_meaning">(The Distressor)</div>
+        <div class="explaination">The Correcter, The Balancer, The Distresser, The Afflicter, The Punisher.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">92. An-Naafi</div>
+        <div class="name_meaning">(The Bestower of Benefits)</div>
+        <div class="explaination">The Creator of Good, The Benefiter, The Propitious, The Auspicious.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">93. An-Noor</div>
+        <div class="name_meaning">(The Prime Light)</div>
+        <div class="explaination">The Light, The One who guides.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">94. Al-Hadi</div>
+        <div class="name_meaning">(The Provider of Guidance)</div>
+        <div class="explaination">The Guide, The Leader, The Guide of the Right Path</div>
+      </div>
+      <div class="names_div">
+        <div class="name">95. Al-Badi</div>
+        <div class="name_meaning">(The Unique One)</div>
+        <div class="explaination">The Wonderful Originator, The Unprecedented and Incomparable Inventor</div>
+      </div>
+      <div class="names_div">
+        <div class="name">96. Al-Baaqi</div>
+        <div class="name_meaning">(The Ever Surviving One)</div>
+        <div class="explaination">The Everlasting, The Ever-Enduring, The Ever-Present</div>
+      </div>
+      <div class="names_div">
+        <div class="name">97. Al-Warith</div>
+        <div class="name_meaning">(The Eternal Inheritor)</div>
+        <div class="explaination">The Heir, The One whose Existence remains.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">98. Ar-Rasheed</div>
+        <div class="name_meaning">(The Guide to Path of Rectitude)</div>
+        <div class="explaination">The Guide to the Right Path, The One who guides.</div>
+      </div>
+      <div class="names_div">
+        <div class="name">99. As-Sabur</div>
+        <div class="name_meaning">(The Extensively Enduring One)</div>
+        <div class="explaination">The Patient, The One who does not quickly punish the sinners.</div>
+      </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

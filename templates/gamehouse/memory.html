@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style/memory.css' %}" />
+    <title>MEMORY | FAMILY LINK TREE</title>
+  </head>
+  <body>
+    
+    <div id="maindiv">
+      <header id="header">
+        FIND ALL
+        
+        <div class="homebtn">
+          <br>
+          <a  id="linkhome" href="{% url 'gamehouse' %}" >GameHouse</a>
+        </div>
+      </header>
+      <h2 id="time_heading" style="display: inline-block;" >Time:<span id="time"></span></h2>
+      <br>
+      <button id="start">Click to Start</button>
+      <div id="background"></div>
+      <div id="maindiv">
+        <div class="grid"></div>
+      </div>
+    </div>  
+    <script>
+        var url = "{% static 'images/' %}";
+    </script>
+    <script src="{% static 'js/memory.js' %}" type="text/javascript" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </body>
+</html>

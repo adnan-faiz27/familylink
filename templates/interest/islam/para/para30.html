@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/islam.css' %}" />
+    <title>PARA_30 | FAMILY LINK TREE</title>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar fixed-top navbar-dark text-light navbar-expand-md navigation-clean-search"
+      style="background-color: black;">
+      <div class="container"><a class="navbar-brand" href="{% url 'viewMember' %}">FAMILY LINK</a><button
+          class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle
+            navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'viewMember' %}"
+              class="login">Home</a></span>
+            <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' 'para' %}"
+                class="login">Para</a></span>
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' '99names' %}"
+                class="login">99names</a></span>
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' 'hadiths' %}"
+              class="login">Hadiths</a></span>
+          <span class="navbar-text" style="padding-left:2.5rem;padding-right:0.5rem"> <a href="{% url 'islam' 'stories' %}"
+              class="login">Stories</a></span>
+          
+        </div>
+      </div>
+    </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="main_div">
+            <h1>{{obj}}</h1>
+            
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">78. AN-NABA - THE NEWS</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/078.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">79. AN-NAZIAT - THOSE WHO PULL OUT</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/079.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">80. ABASA - HE FROWNED</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/080.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">81. AT-TAKWIR - THE OVERTHROWING</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/081.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">82. AL-INFITAAR - THE SPLITTING ASUNDER</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/082.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">83. AL-MUTAFFIFIN - THE DEFRAUDING</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/083.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">84. AL-INSHIQAQ - THE SPLITTING ASUNDER</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/084.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">85. AL-BUROOJ - THE BIG STARS</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/085.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">86. AT-TARIQ - THE NIGHT COMER</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/086.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">87. AL-ALA - THE MOST HIGH</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/087.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">88. AL-GHAASHIYAH - THE OVERWHELMING</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/088.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">89. AL-FAJR - THE DAWN</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/089.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">90. AL-BALAD - THE CITY</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/090.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">91. ASH-SHAMS - THE SUN</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/091.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">92. AL-LAIL - THE NIGHT</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/092.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">93. AD-DUHA - THE EARLY HOURS</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/093.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">94. AL-INSHIRAH - THE OPENING UP</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/094.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">95. AT-TIN - THE FIG</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/095.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">96. AL-ALAQ - THE CLOT</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/096.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">97. AL-QADR - THE MAJESTY</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/097.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">98. AL-BAYYINAH - THE CLEAR EVIDENCE
+                </div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/098.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">99. AL-ZILZAL - THE SHAKING</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/099.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">100. AL-ADIYAT - THE ASSAULTERS</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/100.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">101. AL-QARI'AH - THE CALAMITY</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/101.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">102. AT-TAKATHUR - THE RIVALRY IN WORLD INCREASE</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/102.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">103. AL-ASR - THE TIME</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/103.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">104. AL-HUMAZAH - THE SLANDERER</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/104.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">105. AL-FIL - THE ELEPHANT</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/105.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">106. QURAISH - QURAISH</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/106.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">107. AL-MAUN - ACT OF KINDNESS</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/107.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">108. AL-KAUTHAR - THE ABUNDANCE OF GOOD</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/108.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">109. AL-KAFIRUN - THE DISBELIEVERS</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/109.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">110. AN-NASR - THE HELP</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/110.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">111. AL-MASAD - THE FLAME</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/111.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">112. AL-IKHLAS - THE UNITY</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/112.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">113. AL-FALAQ - THE DAWN</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/113.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="names_div">
+                <div class="name" style="background-color: #6decff;color: white;">114. AN-NAS - THE MEN</div>
+                <div class="explaination">
+                    <audio controls>
+                        <source src="{% static 'audio/114.mp3' %}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

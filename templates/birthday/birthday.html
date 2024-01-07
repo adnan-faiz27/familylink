@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/member.css' %}" />
+    <title>BIRTHDAY | FAMILY LINK TREE</title>
+</head>
+<body>
+  <div>
+    <nav class="navbar fixed-top navbar-dark text-light navbar-expand-md navigation-clean-search" style="background-color: black;" >
+        <div class="container"><a class="navbar-brand" href="{% url 'viewMember' %}">FAMILY LINK</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <span class="navbar-text" style="padding-left:3rem"> <a href="{% url 'viewMember' %}" class="login">Home</a></span>
+                <span class="navbar-text" style="padding-left:3rem"> <a href="{% url 'birthdayList' %}" class="login">Birthday</a></span>
+            </div>
+            
+        </div>
+    </nav>
+    
+    <div id = "form">
+        {% if message == "" %}
+        <form action="" method="POST" style="margin-top:5.5rem; margin-left:0.5rem;">
+            {% csrf_token %}
+            <select name="month" id="user" class="form-control" style="width:10rem;">
+                {% for month in months %}
+                        {% if month.1 == selectedmonth %}
+                            <option value={{month.0}} selected >{{month.0}}</option>
+                        {% else %}
+                            <option value={{month.0}}>{{month.0}}</option>
+                        {% endif %}
+                {% endfor %}
+              </select>
+              <div class="buttons">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+              {% if day == request.user.birthDay.day and month == request.user.birthDay.month %}
+                <div class = "birthdaywish">
+                    Happy Birthday - {{request.user.user_name}}
+                    <a href="{% url 'pdf' request.user.id %}" class="login">Get Wish</a>
+                </div>
+                {% endif %}
+        </form>    
+        {% else %}
+        <br>
+        <br>
+        <br>
+        <div class = "birthdaywish">
+            {{message}}
+        </div>
+        {% endif %}
+        
+        
+        
+        
+    </div>
+        <div class="container">
+          <div class="row">
+              <div class="col-12 mb-3 mb-lg-5">
+                  <div class="position-relative card table-nowrap table-card" id="member_div" style="margin-top:2rem;">
+                      <div class="card-header align-items-center">
+                        <h5 class="mb-0">BirthDay</h5>
+                          
+                      </div>
+                      <div class="table-responsive">
+                          <table class="table mb-0">
+                              <thead class="small text-uppercase bg-body text-muted">
+                                  <tr>
+                                      <th class="user_name">User Name</th>
+                                      <th class="first_name">BirthDate</th>
+                                      <th class="last_name">FirstName</th>
+                                      <th class="middle_name">Age</th>
+                                      <th class="gender">Gender</th>
+                                      
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                {% for obj in obj %}
+                                {% if obj.0.id == request.user.id %}
+                                <tr class="align-middle" style ="background-color: rgb(225, 255, 238);">
+                                    <td class="user_name">
+                                        <a href="{% url 'viewProfile' obj.0.id %}" class="login">
+                                            @{{obj.0.user_name}}
+                                        </a>
+                                    </td>
+                                    <td class="first_name">{{obj.0.birthDay}}</td>
+                                    <td class="middle_name">{{obj.0.firstName}}</td>
+                                    <td class="last_name">
+                                        <div class="d-flex align-items-center">
+                                            
+                                            <span>{{obj.1}}</span>
+                                        </div>
+                                    </td>
+                                    <td class="gender">
+                                      <div class="d-flex align-items-center">
+                                            
+                                        <span>{{obj.0.gender}}</span>
+                                    </div>
+                                    </td>
+                                </tr>
+                                {% elif obj.0.gender == 'Female' %}
+                                <tr class="align-middle" style ="background-color: rgb(244, 225, 255);">
+                                    <td class="user_name">
+                                        <a href="{% url 'viewProfile' obj.0.id %}" class="login">
+                                            @{{obj.0.user_name}}
+                                        </a>
+                                    </td>
+                                    <td class="first_name">{{obj.0.birthDay}}</td>
+                                    <td class="middle_name">{{obj.0.firstName}}</td>
+                                    <td class="last_name">
+                                        <div class="d-flex align-items-center">
+                                            
+                                            <span>{{obj.1}}</span>
+                                        </div>
+                                    </td>
+                                    <td class="gender">
+                                      <div class="d-flex align-items-center">
+                                            
+                                        <span>{{obj.0.gender}}</span>
+                                    </div>
+                                    </td>
+                                </tr>
+                                {% else %}
+                                <tr class="align-middle" style ="background-color: rgb(230, 242, 255);">
+                                    <td class="user_name">
+                                        <a href="{% url 'viewProfile' obj.0.id %}" class="login">
+                                            @{{obj.0.user_name}}
+                                        </a>
+                                    </td>
+                                    <td class="first_name">{{obj.0.birthDay}}</td>
+                                    <td class="middle_name">{{obj.0.firstName}}</td>
+                                    <td class="last_name">
+                                        <div class="d-flex align-items-center">
+                                            
+                                            <span>{{obj.1}}</span>
+                                        </div>
+                                    </td>
+                                    <td class="gender">
+                                      <div class="d-flex align-items-center">
+                                            
+                                        <span>{{obj.0.gender}}</span>
+                                    </div>
+                                    </td>
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                              </tbody>
+                          </table>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

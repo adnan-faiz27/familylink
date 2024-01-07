@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/interest.css' %}" />
+    <title>INTEREST | FAMILY LINK TREE</title>
+</head>
+<body>
+  <div>
+    <nav class="navbar fixed-top navbar-dark text-light navbar-expand-md navigation-clean-search" style="background-color: black;" >
+        <div class="container"><a class="navbar-brand" href="{% url 'viewMember' %}">FAMILY LINK</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <span class="navbar-text" style="padding-left:3rem"> <a href="{% url 'viewMember' %}" class="login">Home</a></span>
+                {% if request.user.FID.religion == 'Islam' %}
+                <span class="navbar-text" style="padding-left:3rem"> <a href="{% url 'islam' 'para' %}" class="login">Islam</a></span>
+                {% endif %}
+                <span class="navbar-text" style="padding-left:3rem"> <a href="{% url 'room' '3' %}" class="login">Chat Room</a></span>
+                <span class="navbar-text" style="padding-left:3rem"> <a href="{% url 'room' '2' %}" class="login">FoodRecipe Room</a></span>
+                <span class="navbar-text" style="padding-left:3rem"> <a href="{% url 'room' '1' %}" class="login">Movie/Series Room</a></span>
+              
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group dropdown">
+            <div class="option">
+            <label for="exampleFormControlSelect1">BOOK</label>
+            <select class="form-control" name='book' id="exampleFormControlSelect1">
+                {% for choice in book_choice %}
+                    {% if choice == book_selected %}
+                    <option selected>{{choice}}</option>
+                    {% else %}
+                    <option>{{choice}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            </div>
+            
+            <div class="option">
+            <label for="exampleFormControlSelect1">SPORT</label>
+            <select class="form-control" name = 'sport' id="exampleFormControlSelect1">
+                {% for choice in sport_choice %}
+                    {% if choice == sport_selected %}
+                    <option selected>{{choice}}</option>
+                    {% else %}
+                    <option>{{choice}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            </div>
+            <div class="option">
+            <label for="exampleFormControlSelect1">MOVIE</label>
+            <select class="form-control" name='movie' id="exampleFormControlSelect1">
+                {% for choice in movie_choice %}
+                    {% if choice == movie_selected %}
+                    <option selected>{{choice}}</option>
+                    {% else %}
+                    <option>{{choice}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            </div>
+            <button type="submit" class="btn btn-dark" >Submit</button>
+        </div>
+    </form>
+        <div class="container">
+          <div class="row">
+              <div class="col-12 mb-3 mb-lg-5">
+                  <div class="position-relative card table-nowrap table-card" id="member_div">
+                      <div class="card-header align-items-center">
+                        <h5 class="mb-0">All MEMBERS</h5>
+                      </div>
+                      <div class="table-responsive">
+                          <table class="table mb-0">
+                              <thead class="small text-uppercase bg-body text-muted">
+                                  <tr>
+                                      <th class="user_name">User Name</th>
+                                      <th class="first_name">Interest</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                {% if members %}
+                                {% for member in members %}
+                                {% if member.gender == 'Male'  %}
+                                <tr class="align-middle" style ="background-color: rgb(230, 242, 255);">
+                                    <td class="user_name">
+                                        <a href="{% url 'viewProfile' member.id %}" class="login">@{{member.user_name}}</a>
+                                    </td>
+                                    <td class="first_name">
+                                      <div class="dropdown">
+                                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Click
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                          {% if obj == 'm' %}
+                                          <a class="dropdown-item items" href="#">Movie - {{member.movie}}</a>
+                                          {% endif %}
+                                          {% if obj == 'b' %}
+                                          <a class="dropdown-item items" href="#">Book - {{member.book}}</a>
+                                          {% endif %}
+                                          {% if obj == 's' %}
+                                          <a class="dropdown-item items" href="#">Sport - {{member.sport}}</a>
+                                          {% endif %}
+                                          {% if obj == 'sb' %}
+                                          <a class="dropdown-item items" href="#">Sport - {{member.sport}}</a>
+                                          <a class="dropdown-item items" href="#">Book - {{member.book}}</a>
+                                          {% endif %}
+                                          {% if obj == 'bm' %}
+                                          <a class="dropdown-item items" href="#">Book - {{member.book}}</a>
+                                          <a class="dropdown-item items" href="#">Movie - {{member.movie}}</a>
+                                          {% endif %}
+                                          {% if obj == 'sm' %}
+                                          <a class="dropdown-item items" href="#">Sport - {{member.sport}}</a>
+                                          <a class="dropdown-item items" href="#">Movie - {{member.movie}}</a>
+                                          {% endif %}
+                                          {% if obj == 'smb' %}
+                                          <a class="dropdown-item items" href="#">Sport - {{member.sport}}</a>
+                                          <a class="dropdown-item items" href="#">Book - {{member.book}}</a>
+                                          <a class="dropdown-item items" href="#">movie - {{member.movie}}</a>
+                                          {% endif %}
+                                          
+                                        </div>
+                                      </div>
+                                    </td>
+                                </tr>
+                                {% else %}
+                                <tr class="align-middle" style ="background-color: rgb(244, 225, 255);">
+                                    <td class="user_name">
+                                        <a href="{% url 'viewProfile' member.id %}" class="login">@{{member.user_name}}</a>
+                                    </td>
+                                    <td class="first_name">
+                                      <div class="dropdown">
+                                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Click
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                          {% if obj == 'm' %}
+                                          <a class="dropdown-item items" href="#">Movie - {{member.movie}}</a>
+                                          {% endif %}
+                                          {% if obj == 'b' %}
+                                          <a class="dropdown-item items" href="#">Book - {{member.book}}</a>
+                                          {% endif %}
+                                          {% if obj == 's' %}
+                                          <a class="dropdown-item items" href="#">Sport - {{member.sport}}</a>
+                                          {% endif %}
+                                          {% if obj == 'sb' %}
+                                          <a class="dropdown-item items" href="#">Sport - {{member.sport}}</a>
+                                          <a class="dropdown-item items" href="#">Book - {{member.book}}</a>
+                                          {% endif %}
+                                          {% if obj == 'bm' %}
+                                          <a class="dropdown-item items" href="#">Book - {{member.book}}</a>
+                                          <a class="dropdown-item items" href="#">Movie - {{member.movie}}</a>
+                                          {% endif %}
+                                          {% if obj == 'sm' %}
+                                          <a class="dropdown-item items" href="#">Sport - {{member.sport}}</a>
+                                          <a class="dropdown-item items" href="#">Movie - {{member.movie}}</a>
+                                          {% endif %}
+                                          {% if obj == 'smb' %}
+                                          <a class="dropdown-item items" href="#">Sport - {{member.sport}}</a>
+                                          <a class="dropdown-item items" href="#">Book - {{member.book}}</a>
+                                          <a class="dropdown-item items" href="#">movie - {{member.movie}}</a>
+                                          {% endif %}
+                                          
+                                        </div>
+                                      </div>
+                                    </td>
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                                
+                              </tbody>
+                          </table>
+                      </div>
+                   
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

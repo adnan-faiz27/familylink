@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/home.css' %}" />
+    <title>{{page}} | FAMILY LINK TREE</title>
+</head>
+<body>
+
+    <div>
+        <div class="header-blue">
+            <nav class="navbar fixed-top navbar-dark text-light navbar-expand-md navigation-clean-search" style="background-color: black;" >
+                <div class="container"><a class="navbar-brand" href="#">FAMILY LINK</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <form class="form-inline ml-auto" id="search_form" action="POST" style="visibility: hidden;">
+                            <div class="form-group"  style="color: white; float: right;">Search</label>
+                              <input class="form-control search-field" type="search" name="search" id="search-field">
+                            </div>
+                        </form>
+                        {% if page == 'REGISTER' %}
+                        <span class="navbar-text"> <a href="{% url 'login' %}" class="login">Log In</a></span>
+                        {% else %}
+                        <a class="btn btn-light action-button" role="button" href="{% url 'register' %}">Sign Up</a>
+                        {% endif %}
+                      </div>
+                </div>
+            </nav>
+            {% if page == 'REGISTER' %}
+            <div class="form_div">
+                <form action="" method="POST" style="width:20rem">
+                {% csrf_token %} 
+                <div class="form-group">
+                    <h1>Register</h1>
+                    <h4>{{message}}</h4>
+                    <label for="FID" class="text-white"
+                      >Family ID</label>
+                    {{form.FID}}
+                    <small id="FID" class="form-text text-white"
+                      >Please select carefully.</small
+                    >
+                  </div>
+                <div class="form-group">
+                  <label for="user_name" class="text-white"
+                    >User Name : (FirstName_LastName)</label>
+                  {{form.user_name}}
+                  <small id="userName" class="form-text text-white"
+                    >This will be your main credential.</small
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="firstName" class="text-white"
+                    >First Name</label>
+                  {{form.firstName}}
+                </div>
+                <div class="form-group">
+                  <label for="lastName" class="text-white"
+                    >Middle Name</label>
+                  {{form.middleName}}
+                </div>
+                <div class="form-group">
+                  <label for="lastName" class="text-white"
+                    >Last Name</label>
+                  {{form.lastName}}
+                </div>
+                <div class="form-group">
+                  <label for="gender" class="text-white"
+                    >Gender</label>
+                  {{form.gender}}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="text-white"
+                      >Email Address</label>
+                    {{form.email}}
+                  </div>
+                <div class="form-group">
+                  <label for="city" class="text-white"
+                    >City</label>
+                  {{form.city}}
+                </div>
+                <div class="form-group">
+                  <label for="pinCode" class="text-white"
+                    >PinCode</label>
+                  {{form.pinCode}}
+                </div>
+                <div class="form-group">
+                  <label for="country" class="text-white"
+                    >Country</label>
+                  {{form.country}}
+                </div>
+                <div class="form-group">
+                  <label for="date" class="text-white"
+                    >BirthDay</label>
+                  <input
+                    required
+                    type="date"
+                    name='date'
+                    class="form-control"
+                    id="date"
+                    style="opacity: 0.45"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1" class="text-white"
+                    >Password</label>
+                  {{form.password1}}
+                  {{form.password1.help_text}}
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1" class="text-white"
+                    >Confirm Password</label>
+                  {{form.password2}}
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form> 
+            </div>
+            {% else %}
+            <div class="form_div" style = "height:87vh">
+                <form action="" method="POST" style="width:20rem">
+                {% csrf_token %} 
+                <div class="form-group">
+                    <h1 style="padding-top:10rem">Login</h1>
+                  <label for="user_name" class="text-white"
+                    >User Name</label>
+                    <input type="text" class="form-control" name="user_name" placeholder="Enter Username">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1" class="text-white"
+                    >Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Enter Password">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{% url 'reset_password' %}">Forgot Password</a>
+              </form> 
+            </div>
+            {% endif %}
+            
+        </div>
+    </div>
+    
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

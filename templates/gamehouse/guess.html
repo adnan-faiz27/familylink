@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUESS | FAMILY LINK TREE</title>
+    <link rel="stylesheet" href="{% static 'style/guess.css' %}" />
+  </head>
+  <body>
+    <div class="homebtn">
+        <br>
+        <a  id="linkhome" href="{% url 'gamehouse' %}" >GameHouse</a>
+    </div>
+    <div class="wrapper">
+      <header>Guess the number which is <br> between 1 to 100</header>
+      <p class="guess"></p>
+      <div class="input-field">
+        <input type="number" />
+        <button>Check</button>
+      </div>
+      <p>You have <span class="chances">10</span> chances</p>
+    </div>
+    <script src="{% static 'js/guess.js' %}" type="text/javascript" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </body>
+</html>

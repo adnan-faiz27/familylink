@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/member.css' %}" />
+    <title>WELCOME | FAMILY LINK TREE</title>
+</head>
+<body>
+  <div>
+    <nav class="navbar fixed-top navbar-dark text-light navbar-expand-md navigation-clean-search" style="background-color: black;" >
+        <div class="container nav_div"><a class="navbar-brand" href="{% url 'viewMember' %}">FAMILY LINK</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                {% if obj == 'leaders' %}
+                <span class="navbar-text" style="padding-left:2rem"> <a href="{% url 'contact' %}" class="login">Contact</a></span>
+                {% elif obj == 'members' %}
+                <span class="navbar-text" style="padding-left:2rem"> <a href="{% url 'viewMember' %}" class="login">Home</a></span>
+                {% else %}
+                <span class="navbar-text" style="padding-left:2rem"> <a href="{% url 'viewMember' %}" class="login">Home</a></span>
+                {% endif %}
+                <span class="navbar-text" style="padding-left:2rem"> <a href="{% url 'map' %}" class="login">Map</a></span>
+                <span class="navbar-text" style="padding-left:2rem"> <a href="{% url 'birthdayList' %}" class="login">BirthDay</a></span>
+                <span class="navbar-text" style="padding-left:2rem"> <a href="{% url 'interest' %}" class="login">Interest</a></span>
+                <span class="navbar-text" style="padding-left:2rem"> <a href="{% url 'gamehouse' %}" class="login">GameHouse</a></span>
+                <form class="form-inline" id="search_form" action = {% url 'viewMember' %}>
+                  <div class="form-group form_div">
+                    <label for="search-field"><i class="fa fa-search">Search</i></label>
+                    <input class="form-control search-field" type="search" name="search" id="search-field">
+                </div>
+                  <button type="submit" class="btn btn-dark">Submit</button>
+              </form>
+              <span class="navbar-text" id="profile"> <a href="{% url 'viewProfile' request.user.id %}" class="login">Profile</a></span>
+              <span class="navbar-text" id="logout"> <a href="{% url 'logout' %}" class="login">Logout</a></span>
+            </div>
+        </div>
+    </nav>
+        <div class="container">
+          <div class="row">
+              <div class="col-12 mb-3 mb-lg-5">
+                  <div class="position-relative card table-nowrap table-card" id="member_div">
+                      <div class="card-header align-items-center">
+                        {% if obj == 'leaders' %}
+                        <h5 class="mb-0">All MEMBERS</h5>
+                        {% elif obj == 'members' %}
+                        <h5 class="mb-0">Elders (Age>60)</h5>
+                        {% else %}
+                        <h5 class="mb-0">Admins</h5>
+                        {% endif %}
+                          
+                      </div>
+                      <div class="table-responsive">
+                          <table class="table mb-0">
+                              <thead class="small text-uppercase bg-body text-muted">
+                                  <tr>
+                                      <th class="user_name">User Name</th>
+                                      <th class="first_name">FirstName</th>
+                                      <th class="middle_name">MiddleName</th>
+                                      <th class="last_name">LastName</th>
+                                      <th class="gender">Gender</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                {% for member in members %}
+                                {% if member.id == request.user.id %}
+                                <tr class="align-middle" style ="background-color: rgb(225, 255, 238);">
+                                    <td class="user_name">
+                                        <a href="{% url 'viewProfile' member.id %}" class="login">@{{member.user_name}}</a>
+                                    </td>
+                                    <td class="first_name">{{member.firstName}}</td>
+                                    <td class="middle_name">{{member.middleName}}</td>
+                                    <td class="last_name">
+                                        <div class="d-flex align-items-center">
+                                            
+                                            <span>{{member.lastName}}</span>
+                                        </div>
+                                    </td>
+                                    <td class="gender">
+                                      <div class="d-flex align-items-center">
+                                            
+                                        <span>{{member.gender}}</span>
+                                    </div>
+                                    </td>
+                                </tr>
+                                {% elif member.gender == 'Male' %}
+                                <tr class="align-middle" style ="background-color: rgb(230, 242, 255);">
+                                    <td class="user_name">
+                                        <a href="{% url 'viewProfile' member.id %}" class="login">@{{member.user_name}}</a>
+                                    </td>
+                                    <td class="first_name">{{member.firstName}}</td>
+                                    <td class="middle_name">{{member.middleName}}</td>
+                                    <td class="last_name">
+                                        <div class="d-flex align-items-center">
+                                            
+                                            <span>{{member.lastName}}</span>
+                                        </div>
+                                    </td>
+                                    <td class="gender">
+                                      <div class="d-flex align-items-center">
+                                            
+                                        <span>{{member.gender}}</span>
+                                    </div>
+                                    </td>
+                                </tr>
+                                {% else %}
+                                <tr class="align-middle" style ="background-color: rgb(244, 225, 255);">
+                                    <td class="user_name">
+                                        <a href="{% url 'viewProfile' member.id %}" class="login">@{{member.user_name}}</a>
+                                    </td>
+                                    <td class="first_name">{{member.firstName}}</td>
+                                    <td class="middle_name">{{member.middleName}}</td>
+                                    <td class="last_name">
+                                        <div class="d-flex align-items-center">
+                                            
+                                            <span>{{member.lastName}}</span>
+                                        </div>
+                                    </td>
+                                    <td class="gender">
+                                      <div class="d-flex align-items-center">
+                                            
+                                        <span>{{member.gender}}</span>
+                                    </div>
+                                    </td>
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                              </tbody>
+                          </table>
+                      </div>
+                      {% if obj == 'leaders' %}
+                      <div class="card-footer text-end">
+                        <a href="{% url 'leaders' %}" class="btn btn-gray">Elders</a>
+                        <a style="float:right;" href="{% url 'seeadmins' %}" class="btn btn-gray">Admins</a>
+                    </div>
+                    {% endif %}
+                  </div>
+              </div>
+          </div>
+      </div>
+      <br>
+      {% if obj == 'leaders' %}
+      <div id="footerCol2">
+        <br>
+          <form action="" method="POST"  class="footerform">
+            {% csrf_token %} 
+            <h1>Feedback Form</h1>
+            <div id="footerCol1">
+                <div id = "input_div">
+                    <input type="text" name='member' required placeholder="Enter your email/UserName">
+                
+                    <textarea id="w3review" name="message" rows="4" cols="50">Any kind of improvement/message...</textarea>
+                </div>
+                
+                <div id = "button_div">
+                    <br>
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                </div>
+                <br>
+            </div>
+            
+          </form> 
+        </div>
+      {% endif %}
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

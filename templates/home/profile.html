@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/profile.css' %}" />
+    <title>PROFILE | FAMILY LINK TREE</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main-body">
+          <nav class="navbar fixed-top navbar-dark text-light navbar-expand-md navigation-clean-search" style="background-color: black;" >
+            <div class="container"><a class="navbar-brand" href="{% url 'viewMember' %}">FAMILY LINK</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <span class="navbar-text" style="padding-left:4rem"> <a href="{% url 'viewMember' %}" class="login">Home</a></span>
+                  </div>
+            </div>
+        </nav>
+              <div class="row gutters-sm" id="main_container">
+                <div class="col-md-3 mb-3">
+                  <div class="card" id="user_name">
+                    <div class="card-body">
+                      <div class="d-flex flex-column align-items-center text-center">
+                        <div class="mt-2">
+                          <h5>{{member.firstName}} {{member.lastName}}</h5>
+                          <p class=" mb-1">{{member.user_name}}</p>
+                          <p class=" mb-1">{{member.email}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mt-3">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0">Country - {{member.country}}</h6>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0">City - {{member.city}}</h6>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card mt-3" id="close_family">
+                    <div class="card-body">
+                      <div class="d-flex flex-column">
+                        <div class="mt-2" >
+                          <h4 class="align-items-center text-center mb-3">Immediate Family</h4>
+                          {% if member.mother != None %}
+                          <p class="font-size-sm mb-2.5">
+                            <a href="{% url 'viewProfile' member.mother.id %}">
+                              Mother - {{member.mother}}
+                            </a>
+                          </p>
+                          {% else %}
+                          <p class="font-size-sm mb-2.5">
+                            Mother - None
+                          </p>
+                          {% endif %}
+                          {% if member.father != None %}
+                          <p class="font-size-sm mb-2.5">
+                            <a href="{% url 'viewProfile' member.father.id %}">
+                              Father - {{member.father}}
+                            </a>
+                          </p>
+                          {% else %}
+                          <p class="font-size-sm mb-2.5">
+                            Father - None
+                          </p>
+                          {% endif %}
+                          {% if member.spouse != None %}
+                          <p class="font-size-sm mb-2.5">
+                            <a href="{% url 'viewProfile' member.spouse.id %}">
+                                Spouse - {{member.spouse}}
+                            </a>
+                          </p>
+                          {% else %}
+                          <p class="font-size-sm mb-2.5">
+                              Spouse - None
+                          </p>
+                          {% endif %}
+                          {% if kids != None %}
+                            {% for kid in kids %}
+                            <p class="font-size-sm mb-2.5">
+                                <a href="{% url 'viewProfile' kid.id %}">
+                                    Child - {{kid}}
+                                </a>
+                              </p>
+                            {% endfor %}
+                          {% endif %}
+                          {% if siblings != None %}
+                              {% for sibling in siblings %}
+                                  {% if sibling.id != member.id %}
+                                      <p class="font-size-sm mb-2.5">
+                                          <a href="{% url 'viewProfile' sibling.id %}">
+                                              Sibling - {{sibling}}
+                                          </a>
+                                        </p>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="card mb-3" id="personal_info">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Mobile</h6>
+                        </div>
+                        <div class="col-sm-9 ">
+                          {{member.mobileNo}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Gender</h6>
+                        </div>
+                        <div class="col-sm-9 ">
+                          {{member.gender}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Birthday</h6>
+                        </div>
+                        <div class="col-sm-9 ">
+                          {{member.birthDay}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Marital Status</h6>
+                        </div>
+                        <div class="col-sm-9 ">
+                          {{member.maritalStatus}}
+                        </div>
+                      </div>
+                      <hr>
+                      
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Job Organisation</h6>
+                        </div>
+                        <div class="col-sm-9 ">
+                          {{member.jobOrg}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Address</h6>
+                        </div>
+                        <div class="col-sm-9 ">
+                          {{member.address1}}
+                        </div>
+                      </div>
+                      {% if request.user.id == member.id %}
+                      <hr>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <a class="btn btn-info" href="{% url 'edit' member.id %}">Edit</a>
+                          </div>
+                          {% if request.user.is_staff %}
+                          <div class="col-sm-12">
+                            <br>
+                            <a class="btn btn-danger" href="{% url 'admin:index' %}">Admin</a>
+                          </div>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+    
+                  <div class="row gutters-sm">
+                    <div class="col-sm-3 mb-3">
+                      <div class="card h-80">
+                        <div class="card-body">
+                          <h6 class="align-items-center mb-3 intrest">Interest</h6>
+                          <p class="font-size-sm mb-2.5">Movie - {{member.movie}}</p>
+                          <hr class="interest_border">
+                          <p class="font-size-sm mb-2.5">Sport - {{member.sport}}</p>
+                          <hr class="interest_border">
+                          <p class="font-size-sm mb-2.5">Book - {{member.book}}</p>
+                          <hr class="interest_border"> 
+                          <p class="font-size-sm mb-2.5">Present - {{member.present}}</p>
+                          <hr class="interest_border"> 
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-9 mb-3">
+                      <div class="card">
+                        <h6 class="align-items-center mb-3 family_tree">Direct Family Tree</h6>
+                        <div class="tree">
+                          <div id="family_div">
+                            <ul>
+                              <li>
+                                  {% if member.father %}
+                                  <a href="{% url 'viewProfile' member.father.id %}">{{member.father.user_name}}</a>
+                                  {% endif %}
+                                  {% if member.mother %}
+                                  <a href="{% url 'viewProfile' member.mother.id %}">{{member.mother.user_name}}</a>
+                                  {% endif %}
+                                <ul>
+                                  <li>
+                                    <a href="{% url 'viewProfile' member.id %}">{{member.user_name}}</a>
+                                    {% if member.spouse %}
+                                      <a href="{% url 'viewProfile' member.spouse.id %}">
+                                        {{member.spouse.user_name}}</a>
+                                    {% endif %}
+                                    {% if kids != None %}
+                                    <ul>
+                                      {% for kid in kids %}
+                                      <li>
+                                        <a href="{% url 'viewProfile' kid.id %}">{{kid.user_name}}</a>
+                                      </li>
+                                      {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                    
+                                  </li>
+                                  {% if siblings != None %}
+                                      {% for sib in siblings %}
+                                          {% if member.id != sib.id %}
+                                              <li>
+                                                  <a href="{% url 'viewProfile' sib.id %}">{{sib.user_name}}</a>    
+                                              </li>
+                                          {% endif %}
+                                      {% endfor %}
+                                  {% endif %}
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
