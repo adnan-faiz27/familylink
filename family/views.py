@@ -73,7 +73,6 @@ def registerPage(request):
             user = form.save(commit = False)
             user.firstName = user.firstName.capitalize()
             user.lastName = user.lastName.capitalize()
-            user.middleName = user.middleName.capitalize()
             city = request.POST["city"].capitalize()
             pinCode = request.POST["pinCode"]
             location = maplocation(pinCode , city)
@@ -118,6 +117,10 @@ def edit_profile(request , pk):
     form.fields["spouse"].queryset =member.objects.filter(FID=request.user.FID , gender = gen)
     if request.method=='POST':
         mem.email = request.POST.get('email')
+        if(request.POST.get('middleName')):
+            if(request.POST.get('middleName')!=None):
+                if(request.POST.get('middleName')!=''):
+                    mem.middleName = request.POST.get('middleName')
         mem.movie = request.POST.get('movie')
         mem.sport = request.POST.get('sport')
         mem.book = request.POST.get('book')
