@@ -20,6 +20,7 @@ urlpatterns = [
     path('birthday/' , views.birthdayList , name="birthdayList"),
 
     path('member/profile/edit/<str:pk>/' , views.edit_profile , name = 'edit'),
+    path('reset/' , views.reset , name = 'reset'),
     path('member/profile/<str:pk>/' , views.viewProfile , name = 'viewProfile'),
     path('member/' , views.viewMember , name="viewMember"),
     path('member/contact' , views.contact , name="contact"),

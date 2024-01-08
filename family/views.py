@@ -17,7 +17,11 @@ from django.core.mail import EmailMultiAlternatives
 from django.utils.html import strip_tags
 import pdfkit
 
+from django import db
 
+def reset(request):
+    db.connections.close_all()
+    return render(request, 'home/home.html')
 
 
 def home(request):
